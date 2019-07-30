@@ -7198,7 +7198,7 @@
     <property name="Neutral Flyover Allowed" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="mapName" value="ozteas_1939_global" editable="false"/>
+    <property name="mapName" value="oztea_1939_global" editable="false"/>
     <property name="notes">
       <value><![CDATA[  
 <div style="padding:10px;font-size:14px;background-color:white;text-align:justify;">
