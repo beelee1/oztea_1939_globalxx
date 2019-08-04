@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.5"/>
+  <info name="Oztea 1939 Global" version="1.00"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -2736,8 +2736,8 @@
       <option name="isAAforBombingThisUnitOnly" value="true"/>
       <!--<option name="canBeGivenByTerritoryTo" value="British"/>-->
     </attachment>
-    <!-- American_AA Gun -->
-    <attachment name="unitAttachment" attachTo="American_aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- AA Gun -->
+    <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isAAforCombatOnly" value="true"/>
       <!--<option name="isRocket" value="true"/>-->
       <option name="canNotMoveDuringCombatMove" value="true"/>
@@ -2748,8 +2748,8 @@
       <option name="canBeGivenByTerritoryTo" value="British"/>
       <option name="maxAAattacks" value="3"/>
     </attachment>
-    <!-- AA Gun -->
-    <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- American_AA Gun -->
+    <attachment name="unitAttachment" attachTo="American_aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isAAforCombatOnly" value="true"/>
       <!--<option name="isRocket" value="true"/>-->
       <option name="canNotMoveDuringCombatMove" value="true"/>
@@ -3419,6 +3419,7 @@
     <attachment name="territoryAttachment" attachTo="Ontario" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
       <option name="victoryCity" value="1"/>
+      <option name="capital" value="British"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Scotland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
@@ -4078,6 +4079,9 @@
       <option name="objectiveValue" value="3"/>
       <option name="alliedOwnershipTerritories" value="Normandy Bordeaux:France:Holland Belgium:Southern France" count="4"/>
     </attachment>
+    <attachment name="DutchAssist" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Dutch Assist"/>
+    </attachment>
     <!-- Russian Objectives -->
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
@@ -4148,11 +4152,7 @@
       <option name="directOwnershipTerritories" value="Hainan:Paulau Island:Marianas:Caroline Islands:Marshall Islands:Guam:Wake Island:Midway:Johnston Island:Line Islands:Aleutian Islands:New Britain:Solomon Islands:New Guinea:Ceylon:Dutch New Guinea:New Hebrides:Fiji:Gilbert Islands:Samoa" count="8"/>
     </attachment>
     <!-- British Objectives -->
-    <attachment name="objectiveAttachment_British_1_Original" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="original"/>
-      <option name="atWarPlayers" value="Germans" count="1"/>
-    </attachment>
+    
     <!-- UK Pacific Objectives -->
     <attachment name="objectiveAttachment_UK_Pacific_2_Kwangtung_And_Malaya" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -4163,7 +4163,7 @@
     <attachment name="conditionAttachmentANZAC_At_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="ANZAC:Japanese:anyWar"/>
     </attachment>
-    <attachment name="objectiveAttachment_ANZAC_2_Control_Strategic_Islands" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="objectiveAttachment_ANZAC_2_Island_Security" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentANZAC_At_War_With_Japanese"/>
       <option name="objectiveValue" value="5"/>
       <option name="directOwnershipTerritories" value="Solomon Islands:Dutch New Guinea:New Guinea:New Britain" count="4"/>
@@ -4171,21 +4171,33 @@
       <option name="players" value="British:UK_Pacific:Americans:ANZAC:Russians:French"/>
     </attachment>
     <!-- Italians Objectives -->
-    <attachment name="objectiveAttachment_Italians_1_Control_The_Mediterranean" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="5"/>
-      <option name="enemySurfaceExclusionTerritories" value="92 Sea Zone:93 Sea Zone:94 Sea Zone:95 Sea Zone:96 Sea Zone:97 Sea Zone:98 Sea Zone:99 Sea Zone" count="8"/>
+    <attachment name="conditionAttachmentMareNostrum" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Sicily:Sardinia:Malta:Crete:Cyprus" count="5"/>
+    <option name="atWarPlayers" value="British" count="1"/>  
     </attachment>
-    <attachment name="objectiveAttachment_Italians_2_Roman_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachmentMareNostrumSZs" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="enemySurfaceExclusionTerritories" value="92 Sea Zone:93 Sea Zone:94 Sea Zone:95 Sea Zone:96 Sea Zone:97 Sea Zone:98 Sea Zone:99 Sea Zone" count="8"/>
+      <option name="atWarPlayers" value="British" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentMareNostrumCombined" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentMareNostrum:conditionAttachmentMareNostrumSZs"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Italians_1_Control_The_Mediterranean_Or_Islands" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentMareNostrumCombined"/>
+      <option name="objectiveValue" value="5"/>
+    </attachment>
+    <attachment name="objectiveAttachment_2_Mediterranean_Power_Centers" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
     </attachment>
-    <attachment name="objectiveAttachment_Italians_3_North_Africa" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="objectiveAttachment_Italians_3_North_African_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Alexandria:Morocco:Algeria:Tunisia:Tobruk:Libya" count="6"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="2"/>
-      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
     </attachment>
     <!-- Americans Objectives -->
     <attachment name="objectiveAttachment_Americans_1_Homeland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4214,13 +4226,238 @@
     </attachment>
     <attachment name="conditionAttachmentAmericans2ndFrontNormandy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Normandy Bordeaux" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
-      <option name="unitPresence" value="fighter" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontNorway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Norway" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
     </attachment>
     <attachment name="objectiveAttachment_Americans_6_Second_Front" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachmentAmericans2ndFrontNormandy"/>
       <option name="objectiveValue" value="3"/>
-      </attachment>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontNorway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontNorway"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontFinland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Finland" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontFinland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontFinland"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontBalticStates" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Baltic States" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front_Baltic_States" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontBalticStates"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontBulgaria" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Bulgaria" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontBulgaria" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontBulgaria"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontGreece" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Greece" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontGreece" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontGreece"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontAlbania" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Albania" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontAlbania" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontAlbania"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontYugoslavia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Yugoslavia" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontYugoslavia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontYugoslavia"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontGermany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Germany" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontGermany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontGermany"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontNorway" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Norway" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontNormandy"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSouthernItaly" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Southern Italy" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front_Southern_Italy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSouthernItaly"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontNorthernItaly" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Northern Italy" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front_Northern_Italy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontNorthernItaly"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontWesternGermany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Western Germany" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front_Western_Germany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontWesternGermany"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSouthernGermany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Greater Southern Germany" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_Front_Southern_Germany" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSouthernGermany"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontDenmark" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Denmark" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontDenmark" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontDenmark"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontHolland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Holland Belgium" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontHolland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontHolland"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontFrance" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontFrance" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontFrance"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSouthernFrance" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Southern France" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontSouthernFrance" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSouthernFrance"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSpain" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Spain" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontSpain" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSpain"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontPortugal" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Portugal" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontPortugal" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontPortugal"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontPoland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Poland" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontPoland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontPoland"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontEasternPoland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Eastern Poland" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontEasternPoland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontEasternPoland"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSweden" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Sweden" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontSweden" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSweden"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontBessarabia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Bessarabia" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontBessarabia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontBessarabia"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontRomania" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Romania" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontRomania" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontRomania"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
+    <attachment name="conditionAttachmentAmericans2ndFrontSlovakia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedPresenceTerritories" value="Slovakia Hungary" count="1"/>
+      <option name="unitPresence" value="American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Americans_6_Second_FrontSlovakia" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentAmericans2ndFrontSlovakia"/>
+      <option name="objectiveValue" value="3"/>
+    </attachment>
     <!-- Chinese Objectives -->
     <attachment name="conditionAttachmentJapaneseDoNotControlBurmaRoad" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="India:Burma:Yunnan:Szechwan" count="1"/>
@@ -4229,6 +4466,30 @@
     <attachment name="objectiveAttachment_Chinese_1_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="6"/>
       <option name="conditions" value="conditionAttachmentJapaneseDoNotControlBurmaRoad"/>
+    </attachment>
+    <attachment name="conditionAttachmentJapaneseControlFactories" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Manchuria" count="1"/>
+      <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Chinese_2_Factory_Control" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="5"/>
+      <option name="conditions" value="conditionAttachmentJapaneseControlFactories"/>
+    </attachment>
+    <attachment name="conditionAttachmentJapaneseControlFactories2" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Shantung" count="1"/>
+      <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Chinese_3_Factory_Control" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="5"/>
+      <option name="conditions" value="conditionAttachmentJapaneseControlFactories2"/>
+    </attachment>
+    <attachment name="conditionAttachmentJapaneseControlFactories3" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Kiangsu" count="1"/>
+      <option name="unitPresence" value="factory_minor" count="1"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Chinese_4_Factory_Control" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="5"/>
+      <option name="conditions" value="conditionAttachmentJapaneseControlFactories3"/>
     </attachment>
     <!-- Victory Conditions -->
     <!-- Axis Victory -->
@@ -4346,6 +4607,57 @@
       <option name="directPresenceTerritories" value="map" count="1"/>
       <option name="unitPresence" value="submarine" count="1"/>
       <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_3_Shipping_Lanes" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="enemyExclusionTerritories" value="109 Sea Zone:110 Sea Zone:91 Sea Zone:92 Sea Zone:96 Sea Zone:98 Sea Zone:81 Sea Zone:76 Sea Zone:79 Sea Zone:39 Sea Zone" count="10"/>
+      <option name="unitPresence" value="battleship:carrier:submarine:destroyer:cruiser" count="0"/>
+    </attachment>
+    <attachment name="conditionAttachment_BritishShippingLanesUKP" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <option name="directOwnershipTerritories" value="West India:India" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_3_Shipping_Lanes1" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_3_Shipping_Lanes:conditionAttachment_BritishShippingLanesUKP"/>
+      <option name="directOwnershipTerritories" value="United Kingdom:Gibraltar:Malta:Egypt:Trans-Jordan:British Somaliland" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachment_NewWorldPowerSZs" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="enemyExclusionTerritories" value="101 Sea Zone:102 Sea Zone:103 Sea Zone:104 Sea Zone:105 Sea Zone:106 Sea Zone:107 Sea Zone:108 Sea Zone:109 Sea Zone:116 Sea Zone:117 Sea Zone:118 Sea Zone:119 Sea Zone:120 Sea Zone:121 Sea Zone:122 Sea Zone:123 Sea Zone" count="17"/>
+      <option name="unitPresence" value="battleship:carrier:submarine:destroyer:cruiser" count="0"/>
+    </attachment>
+    <attachment name="conditionAttachment_NewWorldPower" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <option name="directOwnershipTerritories" value="Quebec:Alberta Saskatchewan Manitoba:New Brunswick Nova Scotia:Newfoundland Labrador:Ontario:British Columbia" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachment_NewWorldPowerUSA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="atWarPlayers" value="Germans:Italians:Japanese" count="1"/>
+    </attachment>
+    <!-- Italians Conditions -->
+    <attachment name="conditionAttachment_ParisUnconquered" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="France" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAttackedByBritish" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="British:Italians:Unprovoked"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAttackedByFrench" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="French:Italians:Unprovoked"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAttackedByBritishInvert" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="British:Italians:Unprovoked"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAttackedByFrenchInvert" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="French:Italians:Unprovoked"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItaliansAttackedByBritain" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItaliansAttackedByBritish:conditionAttachment_ItaliansAttackedByFrenchInvert"/>
+      </attachment>
+      <attachment name="conditionAttachment_ItaliansAttackedByUK" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ParisUnconquered:conditionAttachment_ItaliansAttackedByBritain"/>
+      </attachment>
+      <attachment name="conditionAttachment_ItaliansAttackedByFrance" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItaliansAttackedByFrench:conditionAttachment_ItaliansAttackedByBritishInvert"/>
+      </attachment>
+      <attachment name="conditionAttachment_ItaliansAttackedByFrench" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ParisUnconquered:conditionAttachment_ItaliansAttackedByFrance"/>
     </attachment>
     <!-- ANZAC Conditions -->
     <attachment name="conditionAttachment_ANZAC_1_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4575,6 +4887,9 @@
     <attachment name="conditionAttachmentTurn6OrHigher" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="6-+"/>
     </attachment>
+    <attachment name="conditionAttachmentTurn2OrHigher" attachTo="Dutch" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="2-+"/>
+    </attachment>
     <attachment name="conditionAttachment_Axis_Capture_London" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="United Kingdom" count="1"/>
     </attachment>
@@ -4666,6 +4981,12 @@
       <option name="relationship" value="Italians:Russians:anyWar"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="conditionAttachment_Italians_Not_At_War_With_British" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Italians:British:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_Not_At_War_With_French" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Italians:French:anyNeutral"/>
+    </attachment>
     <attachment name="conditionAttachmentGermansNotYetAtWarWithChinese" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="Germans:Chinese:anyNeutral"/>
     </attachment>
@@ -4677,6 +4998,12 @@
     </attachment>
     <attachment name="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="Germans:Neutral_True:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_Not_Yet_At_War_With_Dutch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Germans:Dutch:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Italians:Dutch:anyNeutral"/>
     </attachment>
     <attachment name="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Neutral_True:anyNeutral"/>
@@ -4734,6 +5061,12 @@
     <attachment name="conditionAttachment_British_Not_Yet_At_War_With_Japanese" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Japanese:anyNeutral"/>
     </attachment>
+    <attachment name="conditionAttachment_British_Not_Yet_At_War_With_Italians" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="British:Italians:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_French_Not_Yet_At_War_With_Italians" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="French:Italians:anyNeutral"/>
+    </attachment>
     <!-- Russian Territories next to Mongolian Territories:
 						Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur
 						
@@ -4764,15 +5097,35 @@
     <attachment name="conditionAttachment_Japanese_Attack_Dutch" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:Dutch:any:currentRound:Holland Belgium:Belgian Congo:Celebes:Java:Dutch New Guinea:Sumatra"/>
     </attachment>
-    <attachment name="conditionAttachmentAxisAttackDutch" attachTo="Dutch" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Attack_Dutch:conditionAttachment_Italians_Attack_Dutch:conditionAttachment_Japanese_Attack_Dutch"/>
-      <option name="conditionType" value="OR"/>
-    </attachment>
-    <attachment name="TriggerAttachmentAxisAttackDutch" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachmentAxisAttackDutch"/>
+    <attachment name="TriggerAttachmentGermansAttackDutch" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_Attack_Dutch"/>
       <option name="relationshipChange" value="British:Dutch:Neutrality:Friendly_Neutral"/>
       <option name="relationshipChange" value="UK_Pacific:Dutch:Neutrality:Friendly_Neutral"/>
       <option name="relationshipChange" value="ANZAC:Dutch:Neutrality:Friendly_Neutral"/>
+    </attachment>
+    <attachment name="TriggerAttachmentItaliansAttackDutch" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Attack_Dutch"/>
+      <option name="relationshipChange" value="British:Dutch:Neutrality:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Neutrality:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Neutrality:Friendly_Neutral"/>
+    </attachment>
+    <attachment name="TriggerAttachmentJapaneseAttackDutch" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Attack_Dutch"/>
+      <option name="relationshipChange" value="British:Dutch:Neutrality:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Neutrality:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Neutrality:Friendly_Neutral"/>
+    </attachment>
+    <attachment name="TriggerAttachmentGermansAttackDutch" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_Attack_Dutch"/>
+      <option name="relationshipChange" value="French:Dutch:Neutrality:Friendly_Neutral"/>
+    </attachment>
+    <attachment name="TriggerAttachmentItaliansAttackDutch" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Attack_Dutch"/>
+    <option name="relationshipChange" value="French:Dutch:Neutrality:Friendly_Neutral"/>  
+    </attachment>
+    <attachment name="TriggerAttachmentJapaneseAttackDutch" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Attack_Dutch"/>
+      <option name="relationshipChange" value="French:Dutch:Neutrality:Friendly_Neutral"/>
     </attachment> 
     <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_Mongolia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu:Korea"/>
@@ -4828,6 +5181,14 @@
       <option name="productionRule" value="productionGermans:buyBattleshipX"/>
       <option name="when" value="before:germansPurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachmentGermansAttackBelgium" attachTo="Dutch" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="Holland Belgium" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_DutchAssist" attachTo="Dutch" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="DutchAssist:conditionAttachmentGermansAttackBelgium:conditionAttachmentTurn2OrHigher"/>
+      <option name="placement" value="Holland Belgium:infantry" count="1"/>
+      <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -4995,6 +5356,17 @@
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_British_3_Shipping_Lanes_Secure" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_3_Shipping_Lanes1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="5"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_4_New_World_Power" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_NewWorldPowerSZs:conditionAttachment_NewWorldPower:conditionAttachment_NewWorldPowerUSA"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="5"/>
+    </attachment>
+    
     <!-- UK_Pacific Triggers -->
     <attachment name="triggerAttachment_UK_Pacific_Naval_Upgrade" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_UK_Pacific_Naval_Upgrade"/>
@@ -5012,6 +5384,11 @@
       <option name="productionRule" value="productionUK_Pacific:buyBattleshipX"/>
       <option name="when" value="before:britishPurchase"/>
       <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_UK_Pacific_3_Shipping_Lanes_Secure" attachTo="UK_Pacific" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_3_Shipping_Lanes1"/>
+      <option name="resource" value="PUs"/>
+      <option name="resourceCount" value="3"/>
     </attachment>
     <!-- Italians Triggers -->
     <attachment name="triggerAttachment_Italians_Naval_Upgrade" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -5031,8 +5408,20 @@
       <option name="when" value="before:italiansPurchase"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_War_of_National_Defense_UK_Attack" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItaliansAttackedByUK"/>
+      <option name="placement" value="Southern Italy:infantry" count="4"/>
+      <option name="when" value="after:britishCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_War_of_National_Defense_French_Attack" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItaliansAttackedByFrance"/>
+      <option name="placement" value="Southern Italy:infantry" count="4"/>
+      <option name="when" value="after:frenchCombatMove"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- ANZAC Triggers -->
-    <attachment name="triggerAttachment_ANZAC_1_Control_Original_And_Malaya" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_ANZAC_1_Shipping_Security" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachmentANZAC_At_War_With_Japanese:conditionAttachment_ANZAC_1_Original:conditionAttachment_ANZAC_1_Malaya"/>
       <option name="resource" value="PUs"/>
       <option name="resourceCount" value="5"/>
@@ -5056,11 +5445,13 @@
     </attachment>
     <!-- Chinese Triggers -->
     <attachment name="triggerAttachment_Chinese_Artillery_Supplies" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road"/>
+      <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road:objectiveAttachment_Chinese_2_Factory_Control:objectiveAttachment_Chinese_3_Factory_Control:objectiveAttachment_Chinese_4_Factory_Control"/>
+      <option name="conditionType" value="OR"/>
       <option name="frontier" value="productionChinese_Burma_Road_Open"/>
     </attachment>
     <attachment name="triggerAttachment_Chinese_Loses_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road"/>
+      <option name="conditions" value="objectiveAttachment_Chinese_1_Burma_Road:objectiveAttachment_Chinese_2_Factory_Control:objectiveAttachment_Chinese_3_Factory_Control:objectiveAttachment_Chinese_4_Factory_Control"/>
+      <option name="conditionType" value="OR"/>
       <option name="frontier" value="productionChinese_Burma_Road_Closed"/>
       <option name="invert" value="true"/>
     </attachment>
@@ -5527,6 +5918,17 @@
       <option name="when" value="before:americansPolitics"/>
       <option name="uses" value="1"/>
     </attachment>
+    <!-- NOTIFICATIONs -->
+    <attachment name="conditionAttachmentTurn1Check" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="alliedOwnershipTerritories" value="Germany" count="1"/>
+      <option name="rounds" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment1note" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="conditionAttachmentTurn1Check"/>
+      <option name="notification" value="R01"/>
+      <option name="uses" value="1"/>
+      <option name="when" value="before:germansTech"/>
+    </attachment>
     <!-- Player Attachments -->
     <attachment name="playerAttachment" attachTo="Mongolians" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="captureUnitOnEnteringBy" value="Americans:French:British:ANZAC:Chinese:Russians:Germans:Italians:Japanese"/>
@@ -5555,6 +5957,7 @@
     <attachment name="playerAttachment" attachTo="British" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="shareTechnology" value="UK_Pacific"/>
       <option name="helpPayTechCost" value="UK_Pacific"/>
+      <option name="retainCapitalNumber" value="2"/>
     </attachment>
     <attachment name="playerAttachment" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.PlayerAttachment" type="player">
       <option name="immuneToBlockade" value="true"/>
@@ -5650,30 +6053,23 @@
       <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
       <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
-      <option name="relationshipChange" value="Germans:Neutral_True:War"/>
-      <option name="relationshipChange" value="Italians:Neutral_True:War"/>
-      <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
-      <option name="relationshipChange" value="Neutral_True:British:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:UK_Pacific:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:ANZAC:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:Dutch:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:Chinese:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:French:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Neutral_True:Neutral_Allies:Friendly_Neutral"/>
-      <!-- Axis declaring war on Strict Neutrals also flips Mongolia -->
-      <option name="relationshipChange" value="Germans:Mongolians:War"/>
-      <option name="relationshipChange" value="Italians:Mongolians:War"/>
-      <option name="relationshipChange" value="Japanese:Mongolians:War"/>
-      <option name="relationshipChange" value="Mongolians:British:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:UK_Pacific:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:ANZAC:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:Dutch:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:Chinese:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:French:Friendly_Neutral"/>
-      <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
-      <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
+    <attachment name="politicalActionAttachment_Germans_To_War_With_Dutch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_Dutch"/>
+      <option name="relationshipChange" value="Germans:Dutch:War"/>
+      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
+      <option name="text" value="Germans_War_Dutch"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Italians_To_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch"/>
+      <option name="relationshipChange" value="Italians:Dutch:War"/>
+      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
+      <option name="text" value="Italians_War_Dutch"/>
     </attachment>
     <!-- TODO: I suppose all the allies could go to war with Mongolians, but seriously.... they never would, so I'm not going to crowd out everyone's politics screen with it. -->
     <attachment name="politicalActionAttachment_Allies_To_War_With_Mongolians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
@@ -5874,6 +6270,32 @@
       <option name="relationshipChange" value="Chinese:ANZAC:Allied"/>
       <option name="relationshipChange" value="Chinese:Dutch:Friendly"/>
       <option name="text" value="British_War_Japanese"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_British_To_War_With_Italians" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_Italians"/>
+      <option name="relationshipChange" value="Italians:British:Unprovoked"/>
+      <option name="relationshipChange" value="Italians:UK_Pacific:Unprovoked"/>
+      <option name="relationshipChange" value="Italians:ANZAC:Unprovoked"/>
+      <option name="text" value="British_War_Italians"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_French_To_War_With_Italians" attachTo="French" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_French_Not_Yet_At_War_With_Italians"/>
+      <option name="relationshipChange" value="Italians:French:Unprovoked"/>
+      <option name="text" value="French_War_Italians"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Italians_To_War_With_British" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Not_At_War_With_British"/>
+      <option name="relationshipChange" value="British:Italians:War"/>
+      <option name="relationshipChange" value="UK_Pacific:Italians:War"/>
+      <option name="relationshipChange" value="ANZAC:Italians:War"/>
+      <option name="relationshipChange" value="Dutch:Italians:War"/>
+      <option name="text" value="Italians_War_British"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Italians_To_War_With_French" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Not_At_War_With_French"/>
+      <option name="relationshipChange" value="French:Italians:War"/>
+      <option name="relationshipChange" value="Dutch:Italians:War"/>
+      <option name="text" value="Italians_War_French"/>
     </attachment>
     <attachment name="politicalActionAttachment_ANZAC_To_War_With_Japanese" attachTo="ANZAC" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_British_Not_Yet_At_War_With_Japanese"/>
@@ -6376,7 +6798,7 @@
             <unitPlacement unitType="infantry" territory="South Australia" quantity="1" owner="ANZAC"/>
             <unitPlacement unitType="infantry" territory="Western Australia" quantity="1" owner="ANZAC"/>
             <unitPlacement unitType="airfield" territory="Western Australia" quantity="1" owner="ANZAC"/>
-            <unitPlacement unitType="infantry" territory="Philippines" quantity="2" owner="Americans"/>
+            <unitPlacement unitType="American_infantry" territory="Philippines" quantity="2" owner="Americans"/>
             <unitPlacement unitType="fighter" territory="Philippines" quantity="1" owner="Americans"/>
             <unitPlacement unitType="airfield" territory="Philippines" quantity="1" owner="Americans"/>
             <unitPlacement unitType="harbour" territory="Philippines" quantity="1" owner="Americans"/>
@@ -6401,28 +6823,28 @@
             <unitPlacement unitType="American_aaGun" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
             <unitPlacement unitType="airfield" territory="Midway" quantity="1" owner="Americans"/>
             <unitPlacement unitType="American_infantry" territory="Midway" quantity="1" owner="Americans"/>
-            <unitPlacement unitType="American_infantry" territory="Sakha" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Yenisey" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Amur" quantity="6" owner="Russians"/>
-            <unitPlacement unitType="American_mech_infantry" territory="Amur" quantity="1" owner="Russians"/>
-            <unitPlacement unitType="American_artillery" territory="Amur" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_armour" territory="Amur" quantity="1" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Sakha" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Yenisey" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Amur" quantity="6" owner="Russians"/>
+            <unitPlacement unitType="mech_infantry" territory="Amur" quantity="1" owner="Russians"/>
+            <unitPlacement unitType="artillery" territory="Amur" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="armour" territory="Amur" quantity="1" owner="Russians"/>
             <unitPlacement unitType="fighter" territory="Amur" quantity="1" owner="Russians"/>
-            <unitPlacement unitType="American_aaGun" territory="Amur" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Yakut S.S.R." quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Timguska" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Siberia" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Buryatia" quantity="2" owner="Russians"/>
-            <unitPlacement unitType="American_infantry" territory="Sumatra" quantity="1" owner="Dutch"/>
-            <unitPlacement unitType="American_infantry" territory="Olgiy" quantity="2" owner="Mongolians"/>
+            <unitPlacement unitType="aaGun" territory="Amur" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Yakut S.S.R." quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Timguska" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Siberia" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Buryatia" quantity="2" owner="Russians"/>
+            <unitPlacement unitType="infantry" territory="Sumatra" quantity="1" owner="Dutch"/>
+            <unitPlacement unitType="infantry" territory="Olgiy" quantity="2" owner="Mongolians"/>
             <unitPlacement unitType="destroyer" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
             <unitPlacement unitType="submarine" territory="33 Sea Zone" quantity="1" owner="Japanese"/>
             <unitPlacement unitType="battleship" territory="37 Sea Zone" quantity="1" owner="British"/>
             <unitPlacement unitType="destroyer" territory="36 Sea Zone" quantity="1" owner="Japanese"/>
             <unitPlacement unitType="destroyer" territory="35 Sea Zone" quantity="1" owner="Americans"/>
             <unitPlacement unitType="transport" territory="35 Sea Zone" quantity="1" owner="Americans"/>
-            <unitPlacement unitType="American_infantry" territory="Dzavhan" quantity="1" owner="Mongolians"/>
+            <unitPlacement unitType="infantry" territory="Dzavhan" quantity="1" owner="Mongolians"/>
             <unitPlacement unitType="destroyer" territory="39 Sea Zone" quantity="2" owner="British"/>
             <unitPlacement unitType="cruiser" territory="39 Sea Zone" quantity="1" owner="British"/>
             <unitPlacement unitType="transport" territory="39 Sea Zone" quantity="1" owner="British"/>
@@ -6722,7 +7144,7 @@
       <relationship player1="Germans" player2="Italians" type="Allied" roundValue="1"/>
       <relationship player1="Germans" player2="ANZAC" type="War" roundValue="1"/>
       <relationship player1="Germans" player2="French" type="War" roundValue="1"/>
-      <relationship player1="Germans" player2="Dutch" type="War" roundValue="1"/>
+      <relationship player1="Germans" player2="Dutch" type="Neutrality" roundValue="1"/>
       <relationship player1="Germans" player2="Neutral_Axis" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="Germans" player2="Neutral_Allies" type="Unfriendly_Neutral" roundValue="1"/>
       <relationship player1="Germans" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
@@ -6774,7 +7196,7 @@
       <relationship player1="Chinese" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="Chinese" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="British" player2="UK_Pacific" type="Allied" roundValue="1"/>
-      <relationship player1="British" player2="Italians" type="War" roundValue="1"/>
+      <relationship player1="British" player2="Italians" type="Neutrality" roundValue="1"/>
       <relationship player1="British" player2="ANZAC" type="Allied" roundValue="1"/>
       <relationship player1="British" player2="French" type="Allied" roundValue="1"/>
       <relationship player1="British" player2="Dutch" type="Neutrality" roundValue="1"/>
@@ -6782,7 +7204,7 @@
       <relationship player1="British" player2="Neutral_Allies" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="British" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="British" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
-      <relationship player1="UK_Pacific" player2="Italians" type="War" roundValue="1"/>
+      <relationship player1="UK_Pacific" player2="Italians" type="Neutrality" roundValue="1"/>
       <relationship player1="UK_Pacific" player2="ANZAC" type="Allied" roundValue="1"/>
       <relationship player1="UK_Pacific" player2="French" type="Allied" roundValue="1"/>
       <relationship player1="UK_Pacific" player2="Dutch" type="Neutrality" roundValue="1"/>
@@ -6790,9 +7212,9 @@
       <relationship player1="UK_Pacific" player2="Neutral_Allies" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="UK_Pacific" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="UK_Pacific" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
-      <relationship player1="Italians" player2="ANZAC" type="War" roundValue="1"/>
-      <relationship player1="Italians" player2="French" type="War" roundValue="1"/>
-      <relationship player1="Italians" player2="Dutch" type="War" roundValue="1"/>
+      <relationship player1="Italians" player2="ANZAC" type="Neutrality" roundValue="1"/>
+      <relationship player1="Italians" player2="French" type="Neutrality" roundValue="1"/>
+      <relationship player1="Italians" player2="Dutch" type="Neutrality" roundValue="1"/>
       <relationship player1="Italians" player2="Neutral_Axis" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="Italians" player2="Neutral_Allies" type="Unfriendly_Neutral" roundValue="1"/>
       <relationship player1="Italians" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
@@ -6803,7 +7225,7 @@
       <relationship player1="ANZAC" player2="Neutral_Allies" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="ANZAC" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
       <relationship player1="ANZAC" player2="Mongolians" type="Strict_Neutral" roundValue="1"/>
-      <relationship player1="French" player2="Dutch" type="Friendly" roundValue="1"/>
+      <relationship player1="French" player2="Dutch" type="Neutrality" roundValue="1"/>
       <relationship player1="French" player2="Neutral_Axis" type="Unfriendly_Neutral" roundValue="1"/>
       <relationship player1="French" player2="Neutral_Allies" type="Friendly_Neutral" roundValue="1"/>
       <relationship player1="French" player2="Neutral_True" type="Strict_Neutral" roundValue="1"/>
@@ -7185,6 +7607,9 @@
     <property name="Limit SBR Damage To Factory Production" value="false" editable="false">
       <boolean/>
     </property>
+    <property name="Dutch Assist" value="false" editable="true">
+      <boolean/>
+    </property>
     <!-- Neutrals related -->
     <property name="neutralCharge" value="0" editable="false">
       <number min="0" max="9999999"/>
@@ -7210,9 +7635,10 @@
 <br>
 <br><em>The world stands on the brink of catastrophe. The rising tide of fascism approaches the breakwater of history, as the dictatorial regimes of Nazi Germany, Imperial Japan, and The Italian Empire seek to expand their rule across the entire planet. A decade of instigation, skirmishes, and attempts to placate these tyrants have failed. And so the world plunges into a new World War. The German Reich, wants “Living Space” to expand it’s nation, which it plans to absorb from it’s west and it’s east. The Italians seek to restore the glory of the Roman Empire and dominate the entire Mediterranean basin. While the Japanese Empire desires to flush out the western colonial powers from Asia, and establish a Pan-Asian Co-Prosperity sphere, with themselves at it’s apex. Their goals are lofty, and if successful these powers would establish a new world order. However, standing against them, weary from the last war, disorganized by purges and economic depressions stand the Allied Powers. The strength of The United Kingdom, its Commonwealth and French Republic may be waning, but they will not see the world fall into a new dark age without a fight. The Soviet Union, stands as their unlikely ally, since it too finds itself in the cross-hairs of the fascist wolves. Will it be able to withstand the coming storm? Though the new world, and the United States stands reluctant to spill blood and treasure in this most trying of times. Political willpower is hard to come by, and though the economy has begun to recover and some strength has been regained, the world holds it’s breath in hope they will decide in time to rescue the world from a new dark age. The year is 1939, and the war to decide the fate of the world has begun.</em><br>
 <br>
+<ul>
 <b>Note</b><br>
 This is Ozteas 1939 set up for the Global 1940 game. Politically the game begins as if it were two turns before a normal 1940 start.
-Germany is at war with France, UK, and ANZAC
+Germany is at war with France, UK, and ANZAC.
 Japan is at war with China.<br>
 <br>
 <b>Special Rules</b><br>
@@ -7221,13 +7647,162 @@ Soviet naval units in the Pacific Theater must remain adjacent to original Sovie
 <br>
 The Japanese Kamikaze special rule is deactivated when using the 1939 setup. (It has been left active. It can be turned off in Map Options).<br>
 <br>
-Italy, while not at war may move naval units out of the Mediterranean. The may declare war at any time, however unless Paris has fallen their combat moves may not include attacks on any game space occupied by French or British units.<b>This Must be Player Enforced</b><br>
+Italy, while not at war may move naval units out of the Mediterranean. They may declare war at any time, however unless Paris has fallen their combat moves may not include attacks on any game space occupied by French or British units.<b>This is Player Enforced</b><br>
 <br>
 The Benelux Faction (Dutch & Belgians) are an independent faction aligned to no power. However, when and if any territory they posses is attacked by an Axis power, all Benelux territories become treated as Pro-Allied.<br>
 <br>
 Factories built on Chinese territory are no longer destroyed/removed if liberated by Allied forces.<br>
 <br>
-
+<b>Modified National Advantages</b><br><br>
+<b>Germany</b><br>
+Trade with the Soviet Union
+5 PUs while at peace with the Soviet Union.<br>
+<br>
+“Liebensraum” - Living Space in the East
+5 PUs for German or Italian control of any 7 of the following 9 at the end of your turn. (Baltic States, Belarus, Smolensk, Eastern Poland, Western Ukraine, Ukraine, Bessarabia, Bryansk, Rostov)<br>
+<br>
+Swedish Iron Ore
+5 PUs for control of Norway, Denmark, and pro-axis or neutral Sweden.<br>
+<br>
+Middle Eastern Oil
+2 PUs for each of the following territories occupied by a German land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia, Egypt)<br>
+<br>
+Caucasus Oil
+5 PUs for Axis control of the Caucasus<br>
+<br>
+Domination in the East
+3 PUs for Axis control of each or any of the following. (Lenningrad, Stalingrad, Moscow)<br>
+<br>
+Domination in the West
+3 PUs for Axis control of all of the following. (Holland/Belgium, France, Southern France, Normandy/Bordeux)<br>
+<br><br>
+<b> SOVIET UNION</b><br>
+Lend Lease
+3 PUs for control of any/each of the following combination of territories and sea zones free of hostile axis warships (Archangel & SZ 125) (Soviet Far East & SZ 3) (Western Allied control of Persia & SZ 80)<br>
+<br>In the event Moscow is no longer controlled this bonus may be collected and spent in the form of infantry directly on any original Soviet territory, while no Western Allied units are in original Soviet territory and Russia is at war with the European Axis.<b>This is Player Enforced</b>
+<br><br>
+Spread of Communism
+1 PU for each Soviet control marker placed on any Axis, Pro-Axis, Pro-Allied, or Neutral territory. (Including Mongolia)
+<br><br><br>
+<b>JAPAN</b><br>
+Subjugated People
+5 PUs if each originally Chinese territory you control contains at least one Japanese land unit.
+<br><br>
+Trade with the Western Powers
+5 PUs if you are at peace with the Western Allies
+<br><br>
+Control of Western Power Centers
+5 PUs for control of each or any of the following: Calcutta, Sydney, Honolulu
+<br><br>
+Army Plan
+5 PUs for control of Korea and any five originally Soviet territories (May not be collected in any turn with the Navy Plan)
+<br><br>
+Navy Plan
+5 PUs for control of Borneo, Java, Sumatra, Celebes (May not be collected in any turn with the Army Plan)
+<br><br>
+Pacific Primacy
+5 PUs for Japanese control of any eight Pacific Islands that have no PU value.
+<br><br><br>
+<b>UNITED STATES</b><br>
+Continental United States
+10 PUs for control of Western, Central and Eastern US, while at war
+<br><br>
+Philippines
+5 PUs for control of the Philippines, while at war
+<br><br>
+Pacific Defense Obligations
+5 PUs for control of Hawaii, Alaska, Aleutians, Johnston and Line Islands, while at war.
+<br><br>
+Central American Defense Obligations
+5 PUs for control of Mexico, Southeast Mexico, West Indies, and Central America, while at war.
+<br><br>
+Pacific Primacy
+5 PUs for US control of any eight Pacific Islands that have no PU value.
+<br><br>
+The Second Front
+3 PUs for each/any continental European territory with a printed PU value that is controlled by the Western Allies and occupied by US land forces, and the land forces of any other Western Allied power(s).<br><br>
+<b>Note</b><br>
+The 2nd Front Objective will only show true in the objectives tab when Normandy is activated. All others are listed at end of turn.
+<br><br><br>
+<b>CHINA</b>
+Burma Road
+6 PUs for control of the Burma Road. (India, Burma, Yunnan, Szechwan) (may build artillery)
+<br><br>
+Industrial Base
+5 PUs for control of any industrial complex (may build artillery)
+<br><br><br>
+<b>UNITED KINGDOM</b>
+Shipping Lanes Secure [European Economy]
+5 PUs for control of United Kingdom, Gibraltar, Malta, Egypt, Trans-Jordan, British Somali-land, West India & India and no hostile Axis warships adjacent to these territories.
+<br><br>
+The Power of the New World [European Economy]
+5 PUs for control of all Canadian territories, the United States is at war, and no axis warships in sea zones 101-109 or 116-123. When the UK does not control London, this bonus and ONLY Canadian marked PUs, may continue to be collected, saved and spent at any Canadian industrial complex.
+<br><br>
+<b>Note</b><br>
+You will need to <b>EDIT</b> the correct PUs to Canada if London has fallen. <br><br>  
+Shipping Lanes Secure [Pacific Economy]
+3 PUs for control of United Kingdom, Gibraltar, Malta, Egypt, Trans-Jordan, British Somali-land, West India & India and no hostile Axis warships adjacent to these territories.
+<br><br>
+Pacific Power Centers [Pacific Economy]
+5 PUs for Control of Hong Kong and Malaya when at war with Japan
+<br><br><br>
+<b>ITALY</b>
+Mare Nostrum
+5 PUs if no hostile Allied surface warships are in the Mediterranean (92-99) OR Axis control of all islands in the Mediterranean (Sardinia, Sicily, Malta, Crete, Cyprus)
+<br><br>
+Italian North African Empire
+5 PUs for Axis control of North Africa (Morocco, Algeria, Tunisia, Libya, Tobruk, Alexandria)
+<br><br>
+Mediterranean Power Centers
+5 PUs for control of 3 of 4 (Gibraltar, Egypt, Southern France, Greece)
+<br><br>
+Middle East Oil
+2 PUs for each or any of the following territories occupied by an Italian land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)
+<br><br>
+War of National Defense
+12 PUs (One Time Only) of units to be placed in Northern Italy or Southern Italy at the end of a combat movement phase if you are attacked by the Western Allies while you are still neutral. (Before Paris has fallen)
+<br><br><br>
+<b>ANZAC</b>
+Island Security
+5 PUs for control of Dutch New Guinea, New Guinea, New Britain, and Solomon Islands, when at war with Japan.
+<br><br>
+Shipping Security
+5 PUs for allied control of Malaya and all original ANZAC territory, when at war with Japan
+<br><br><br>
+<b>FRANCE</b>
+Le Grande Armee
+12 PUs (One Time Only) of French units to be placed in France if it ever contains US or UK land units.
+<br><br><br>
+<b>Pro-Allied Neutrals</b><br>
+Poland<br>
+Eastern Poland<br>
+Denmark<br>
+Norway<br>
+Iceland<br>
+Greenland<br>
+<br><br>
+<b>Pro-Axis Neutrals</b><br>
+Vyborg<br>
+Baltic States<br>
+Bessarabia<br>
+Romania<br>
+Slovakia Hungary<br>
+Northwestern Persia (no longer Pro-Allied)<br>
+Persia (no longer Pro-Allied)<br>
+Eastern Persia (no longer Pro-Allied)<br>
+<br><br>
+<b>Benelux [Dutch/Belgian]</b> (Treat as Pro-Allied after any of their possessions are attacked)<br>
+Holland Belgium<br>
+Belgian Congo<br>
+Java<br><br>
+<br>
+<b>Optional</b><br>
+Dutch Assist. Begining round 2, adds 1 Infantry to Holland Belgium after German Non Combat Move every turn until Holland is attacked and conquered. Activates via "Map Options". <br><br><br>
+  This Mod is discussed in detail here:<br>
+  <br>
+    https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12
+</ul>
+<br><br><br>
 <b>Note</b><br>
 This game uses the latest Global 1940 2nd Edition (successor to Alpha +3) rules, as posted on Larry's website.<br>
 To blitz move mech_infantry with armour, you must click on them both at the same time (use CTRL to create waypoints).<br>
