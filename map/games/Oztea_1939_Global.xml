@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.1"/>
+  <info name="Oztea 1939 Global" version="1.2"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4077,7 +4077,7 @@
     </attachment>
     <attachment name="objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="2"/>
-      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Egypt:Saudi Arabia" count="each"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Egypt:Saudi Arabia" count="each"/>
     </attachment>
     <attachment name="objectiveAttachment_7_Liebensraum" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -4192,7 +4192,7 @@
     </attachment>
     <attachment name="objectiveAttachment_2_Mediterranean_Power_Centers" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
+      <option name="directOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_3_North_African_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -4200,7 +4200,7 @@
     </attachment>
     <attachment name="objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="2"/>
-      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
     </attachment>
     <!-- Americans Objectives -->
     <attachment name="objectiveAttachment_Americans_1_Homeland" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -7814,6 +7814,9 @@ Dutch Assist. Begining round 2, adds 1 Infantry to Holland Belgium after German 
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
+<br>
+<br>1.2
+<br>Changed "Middle East Oil" Objective to be "Occupied" not "Controlled". Changed "Mediterranean Power Centers" to "Italian Controlled" from "Allied Controlled".
 <br>
 <br>1.1
 <br>Fixed pro-allied territories' units not changing into Allied player's units when activated.
