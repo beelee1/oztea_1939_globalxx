@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.2"/>
+  <info name="Oztea 1939 Global" version="1.3"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -7656,7 +7656,7 @@ Germany is at war with France, UK, and ANZAC.
 Japan is at war with China.<br>
 <br>
 <b>Special Rules</b><br>
-<br>
+<br>USSR begins at war with "Pro-Axis" Neutrals. It may also activate "Pro-Allied" Neutrals. <b>Use Edit</b><br>
 Soviet naval units in the Pacific Theater must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan. (Or until Moscow has been captured).<br>
 <br>
 The Japanese Kamikaze special rule is deactivated when using the 1939 setup. (It has been left active. It can be turned off in Map Options).<br>
@@ -7814,6 +7814,9 @@ Dutch Assist. Begining round 2, adds 1 Infantry to Holland Belgium after German 
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
+<br>
+<br>1.3
+<br>Clarify Game Notes on Soviet at war status at game start.
 <br>
 <br>1.2
 <br>Changed "Middle East Oil" Objective to be "Occupied" not "Controlled". Changed "Mediterranean Power Centers" to "Italian Controlled" from "Allied Controlled".
