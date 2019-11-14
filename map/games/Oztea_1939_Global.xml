@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.4"/>
+  <info name="Oztea 1939 Global" version="1.5"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -8106,6 +8106,9 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
+<br>
+<br>1.5
+<br>Fix Neutral navy Image error..
 <br>
 <br>1.4
 <br>Fix setup errors. Add Charles de Gaulle Neutrals Modified. Add Units Can Load In Hostile Sea Zones.
