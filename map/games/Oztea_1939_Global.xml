@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.5"/>
+  <info name="Oztea 1939 Global" version="1.6"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4235,7 +4235,7 @@
     </attachment>
     <attachment name="objectiveAttachment_2_Mediterranean_Power_Centers" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
+      <option name="alliedOwnershipTerritories" value="Greece:Egypt:Southern France:Gibraltar" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Italians_3_North_African_Empire" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -5206,11 +5206,6 @@
       <option name="players" value="Russians:British:UK_Pacific:ANZAC:Americans:Chinese:French:Dutch"/>
     </attachment>
     <!-- Germans Triggers -->
-    <attachment name="triggerAttachment_Germans_4_Presence_In_Egypt" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="trigger" value="conditionAttachment_Germans_4_unit_presence"/>
-      <option name="resource" value="PUs"/>
-      <option name="resourceCount" value="5"/>
-    </attachment>
     <attachment name="triggerAttachment_Germans_5_Swedish_Iron_Ore" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachment_Germans_5_Control_Norway_And_Denmark:conditionAttachment_Germans_5_Sweden_Not_Enemy"/>
       <option name="conditionType" value="AND"/>
@@ -7905,6 +7900,12 @@ Soviet naval units in the Pacific Theater must remain adjacent to original Sovie
 <br>
 The Japanese Kamikaze special rule is deactivated when using the 1939 setup. (It has been left active. It can be turned off in Map Options).<br>
 <br>
+USA cannot go to war against the Axis until the <b>beginning of PU collect phase</b> of USA 5, unless of course an Axis power attacks it first.<br>
+<br>
+<b>Player Enforced</b> USA may not end movement in seazone adjacent to Japanese controlled territories when not at war with Japan (Sea Zones 6, 17, 19, 20, 22, 32, 33, 34, 36, and 37).<br>
+<br>
+<b>Player Enforced Use Edit</b> USA does not have to declare war at the end of USA 5 if they do not want to.<br>
+<br>
 Italy, while not at war may move naval units out of the Mediterranean ( <b>Use Edit</b> ). They may declare war at any time, however unless Paris has fallen their combat moves may not include attacks on any game space occupied by French or British units.<b>This is Player Enforced</b><br>
 <br>
 The Benelux Faction (Dutch & Belgians) are an independent faction aligned to no power. However, when and if any territory they posses is attacked by an Axis power, all Benelux territories become treated as Pro-Allied.<br>
@@ -8012,7 +8013,7 @@ Italian North African Empire
 5 PUs for Axis control of North Africa (Morocco, Algeria, Tunisia, Libya, Tobruk, Alexandria)
 <br><br>
 Mediterranean Power Centers
-5 PUs for control of 3 of 4 (Gibraltar, Egypt, Southern France, Greece)
+5 PUs for Axis control of 3 of 4 (Gibraltar, Egypt, Southern France, Greece)
 <br><br>
 Middle East Oil
 2 PUs for each or any of the following territories occupied by an Italian land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)
@@ -8107,8 +8108,11 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
 <br>
+<br>1.6
+<br>Change "Med Power Center" objective for Italy to require Axis control instead of Italian. Clarify USA enty into war. Remove German trigger for 5pu unit presence in Egypt.
+<br>
 <br>1.5
-<br>Fix Neutral navy Image error..
+<br>Fix Neutral navy Image error.
 <br>
 <br>1.4
 <br>Fix setup errors. Add Charles de Gaulle Neutrals Modified. Add Units Can Load In Hostile Sea Zones.
