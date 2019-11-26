@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.81"/>
+  <info name="Oztea 1939 Global" version="1.82"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6462,7 +6462,6 @@
     <!-- Political Action Attachments -->
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutralsCDG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
-      <option name="conditionType" value="OR"/>
       <option name="relationshipChange" value="Germans:Neutral_True:War"/>
       <option name="relationshipChange" value="Italians:Neutral_True:War"/>
       <option name="relationshipChange" value="Japanese:Neutral_True:War"/>
@@ -6480,7 +6479,6 @@
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_MongoliansCDG" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Germans_Not_Yet_At_War_With_Mongolians"/>
-      <option name="conditionType" value="OR"/>
       <option name="relationshipChange" value="Germans:Mongolians:War"/>
       <option name="relationshipChange" value="Italians:Mongolians:War"/>
       <option name="relationshipChange" value="Japanese:Mongolians:War"/>
@@ -6495,7 +6493,6 @@
     </attachment>
     <attachment name="politicalActionAttachment_Axis_To_War_With_MongoliansCDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Japanese_Not_Yet_At_War_With_Mongolians"/>
-      <option name="conditionType" value="OR"/>
       <option name="relationshipChange" value="Germans:Mongolians:War"/>
       <option name="relationshipChange" value="Italians:Mongolians:War"/>
       <option name="relationshipChange" value="Japanese:Mongolians:War"/>
@@ -6508,7 +6505,6 @@
       <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
       <option name="text" value="Axis_War_Mongolians"/>
     </attachment>
-    
     <attachment name="politicalActionAttachment_Axis_To_War_With_TrueNeutrals" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="CDGneutralsInvert:conditionAttachment_Germans_Not_Yet_At_War_With_TrueNeutrals"/>
       <option name="relationshipChange" value="Germans:Neutral_True:War"/>
@@ -6584,15 +6580,6 @@
       <option name="relationshipChange" value="Mongolians:Neutral_Allies:Friendly_Neutral"/>
       <option name="text" value="Axis_War_Neutral_True_Mongolians"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Italians_To_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch"/>
-      <option name="relationshipChange" value="Italians:Dutch:War"/>
-      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
-      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
-      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
-      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
-      <option name="text" value="Italians_War_Dutch"/>
-    </attachment>
     <attachment name="politicalActionAttachment_Germans_To_War_With_Dutch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_Dutch"/>
       <option name="relationshipChange" value="Germans:Dutch:War"/>
@@ -6602,6 +6589,16 @@
       <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
       <option name="text" value="Germans_War_Dutch"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Italians_To_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch"/>
+      <option name="relationshipChange" value="Italians:Dutch:War"/>
+      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
+      <option name="text" value="Italians_War_Dutch"/>
+    </attachment>
+    
     <!-- TODO: I suppose all the allies could go to war with Mongolians, but seriously.... they never would, so I'm not going to crowd out everyone's politics screen with it. -->
     <attachment name="politicalActionAttachment_Allies_To_War_With_Mongolians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="CDGneutralsInvert:conditionAttachment_Russians_May_Declare_War_On_Mongolians"/>
@@ -8364,7 +8361,7 @@ Eastern Persia (no longer Pro-Allied)<br>
 Dutch Assist. Begining round 2, adds 1 Infantry to Holland Belgium after German Non Combat Move every turn until Holland is attacked and conquered. Activates via "Map Options". <br><br>
 <b>Optional</b><br>
 Adds "Charles de Gaulle Neutrals".<br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
-Check the box in "Map Options". You will also need to <b>declare war on the Neutrals on Germany's first turn</b>. You will need to <b>Player Enforce</b> correct "Neutral" behavior. <br><br> 
+Check the box in "Map Options". You will also need to <b>declare war on the Neutrals on Germany's first turn</b>. Select <b>NO:Axis_War_Neutral_True_CDG.BUTTON</b> This will put <b>All</b> Players at war with the True Neutrals.You will need to <b>Player Enforce</b> correct "Neutral" behavior. <br><br> 
 Neutral Ships don’t affect naval at all unless you are attacking them. Neutral Navies are represented with a "Neutral_Navy" <img src="Neutral_Navy.png"/> unit placed in their Home country. You will need to <b>Edit</b> the appropriate number of Ships <b>Before</b> your Combat Move. Any Ships that are not destroyed will be at war with <b>All</b> Powers, so you will need to use Edit accordingly.<br><br>
 When attacking a neutral, the units written here are immediately placed in the attacked territory as well as any territories alligned to them (triplea does this automatically). The opposing team will pick a player<b> Player Enforced</b> to represent those forces and collect income from any of their territories you failed to take. So, after combat, use edit to change any surviving units to the Player of your choice.<br>
 <br>
@@ -8416,8 +8413,12 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
 <br>
+<br>1.82
+<br>Clarify De Gaulle Neutrals DOW.
+<br>
 <br>1.81
 <br>Restore German Declaration of War on True Nuetrals and Mongolians.
+<br>
 <br>1.8
 <br>Restore German Declaration of War on Dutch.
 <br>
