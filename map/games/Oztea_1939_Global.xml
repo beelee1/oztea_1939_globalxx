@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.71"/>
+  <info name="Oztea 1939 Global" version="1.8"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -6567,6 +6567,15 @@
       <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
       <option name="text" value="Italians_War_Dutch"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Germans_To_War_With_Dutch" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germans_Not_Yet_At_War_With_Dutch"/>
+      <option name="relationshipChange" value="Germans:Dutch:War"/>
+      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
+      <option name="text" value="Germans_War_Dutch"/>
+    </attachment>
     <!-- TODO: I suppose all the allies could go to war with Mongolians, but seriously.... they never would, so I'm not going to crowd out everyone's politics screen with it. -->
     <attachment name="politicalActionAttachment_Allies_To_War_With_Mongolians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="CDGneutralsInvert:conditionAttachment_Russians_May_Declare_War_On_Mongolians"/>
@@ -8158,6 +8167,9 @@ This is Oztea's 1939 set up for the Global 1940 game. Politically the game begin
 Germany is at war with France, UK, and ANZAC.
 Japan is at war with China.<br>
 <br>
+<b>Note</b><br>
+When activating Pro Neutrals, Players may only move <b>into not through</b> these Territories. This is <b>Player Enforced</b><br>
+<br>
 <b>Special Rules</b><br>
 <br>USSR begins at war with "Pro-Axis" Neutrals. It may also activate "Pro-Allied" Neutrals.<br>
 Soviet naval units in the Pacific Theater must remain adjacent to original Soviet territory while the Soviet Union is neutral to Japan. (Or until Moscow has been captured).<br>
@@ -8377,6 +8389,9 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
+<br>
+<br>1.8
+<br>Restore German Declaration of War on Dutch.
 <br>
 <br>1.7
 <br>Change "Middle Eastern Oil" objective for Germany and Italy to require control instead of presence. Add German trigger for 2pu if unit presence in Egypt. Add notifications for Japan "Subjugated People" objective. Change Poland setup when "Charles de Gaulle Neutrals Modified" are active.
