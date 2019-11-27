@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.82"/>
+  <info name="Oztea 1939 Global" version="1.83"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -1199,8 +1199,8 @@
     <connection t1="110 Sea Zone" t2="105 Sea Zone"/>
   </map>
   <resourceList>
-    <resource name="techTokens"/>
     <resource name="PUs"/>
+    <resource name="techTokens"/>
     <resource name="SuicideAttackTokens"/>
   </resourceList>
   <playerList>
@@ -7057,7 +7057,7 @@
             <territoryOwner territory="Ceylon" owner="UK_Pacific"/>
             <territoryOwner territory="Samoa" owner="UK_Pacific"/>
             <territoryOwner territory="Shan State" owner="UK_Pacific"/>
-            <territoryOwner territory="Burma" owner="Chinese"/>
+            <territoryOwner territory="Burma" owner="UK_Pacific"/>
             <territoryOwner territory="British Columbia" owner="British"/>
             <territoryOwner territory="India" owner="UK_Pacific"/>
             <territoryOwner territory="Malaya" owner="UK_Pacific"/>
@@ -8186,12 +8186,12 @@
 <br>
 <ul>
 <b>Note</b><br>
-This is Oztea's 1939 set up for the Global 1940 game. Politically the game begins as if it were two turns before a normal 1940 start.
+This is Oztea's 1939 set up for the Global 1940 game. Politically the game begins as if it were <b>two turns</b> before a normal 1940 start.
 Germany is at war with France, UK, and ANZAC.
 Japan is at war with China.<br>
 <br>
 <b>Note</b><br>
-When activating Pro Neutrals, Players may only move <b>into not through</b> these Territories. This is <b>Player Enforced</b><br>
+When activating Pro Neutrals, Players may only move <b>into not through</b> these Territories. <b>AAguns</b> may not activate Pro Neutrals. This is <b>Player Enforced</b><br>
 <br>
 <b>Special Rules</b><br>
 <br>USSR begins at war with "Pro-Axis" Neutrals. It may also activate "Pro-Allied" Neutrals.<br>
@@ -8199,7 +8199,7 @@ Soviet naval units in the Pacific Theater must remain adjacent to original Sovie
 <br>
 The Japanese Kamikaze special rule is deactivated when using the 1939 setup. (It has been left active. It can be turned off in Map Options).<br>
 <br>
-USA cannot go to war against the Axis until the <b>beginning of PU collect phase</b> of USA 5, unless of course an Axis power attacks it first.<br>
+USA cannot go to war against the Axis until the <b>beginning of PU collect phase of USA 5</b>, unless of course an Axis power attacks it first.<br>
 <br>
 <b>Player Enforced</b> USA may not end movement in seazone adjacent to Japanese controlled territories when not at war with Japan (Sea Zones 6, 17, 19, 20, 22, 32, 33, 34, 36, and 37).<br>
 <br>
@@ -8412,6 +8412,10 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
 <br>Change Log:
+<br>
+<br>1.83
+<br>Change Burma to UK Pacific Ownership.
+<br>
 <br>
 <br>1.82
 <br>Clarify De Gaulle Neutrals DOW.
