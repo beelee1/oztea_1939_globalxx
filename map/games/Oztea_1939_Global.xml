@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.83"/>
+  <info name="Oztea 1939 Global" version="1.84"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4118,7 +4118,26 @@
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_OilPresenceInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilControlInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItalianOilControlInvert" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilPresence" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilControl" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItalianOilControlInvert"/>
+    </attachment>
     <attachment name="objectiveAttachment_Germans_6_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_OilPresenceInvert:conditionAttachment_ItalianOilControlInvert"/>
       <option name="objectiveValue" value="2"/>
       <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
     </attachment>
@@ -4132,6 +4151,16 @@
     </attachment>
     <attachment name="DutchAssist" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="gameProperty" value="Dutch Assist"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Germans_9_Presence_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_OilControlInvert"/>
+      <option name="objectiveValue" value="2"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Germans_10_Control_And_Presence_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="2"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
     </attachment>
     <!-- Russian Objectives -->
     <attachment name="objectiveAttachment_Russians_2_Spread_Of_Communism" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4241,8 +4270,37 @@
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Alexandria:Morocco:Algeria:Tunisia:Tobruk:Libya" count="6"/>
     </attachment>
+    <attachment name="conditionAttachment_OilPresenceInvertItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilControlInvert" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_ItalianOilControlInvert" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilPresenceItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+    </attachment>
+    <attachment name="conditionAttachment_OilControlItaly" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_OilControlInvert"/>
+    </attachment>
     <attachment name="objectiveAttachment_Italians_4_Control_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_OilPresenceInvertItaly:conditionAttachment_OilControlInvert"/>
       <option name="objectiveValue" value="2"/>
+      <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Italians_5_Presence_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_ItalianOilControlInvert"/>
+      <option name="objectiveValue" value="2"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
+    </attachment>
+    <attachment name="objectiveAttachment_Italians_6_Control_And_Presence_Iraq_Or_Persia_Or_Northwest_Persia" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="2"/>
+      <option name="directPresenceTerritories" value="Iraq:Persia:Northwest Persia" count="each"/>
       <option name="directOwnershipTerritories" value="Iraq:Persia:Northwest Persia:Saudi Arabia" count="each"/>
     </attachment>
     <!-- Americans Objectives -->
@@ -8226,7 +8284,7 @@ German Presence in Egypt
 2 PUs if there is at least one German land unit in Egypt, whether or not it is controlled by Italy or Germany or Japan.<br>
 <br>
 Middle Eastern Oil
-2 PUs for each of the following territories controlled by a German land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)<br>
+2 PUs for each of the following territories controlled by Germany or has a German land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)<br>
 <br>
 Caucasus Oil
 5 PUs for Axis control of the Caucasus<br>
@@ -8320,7 +8378,7 @@ Mediterranean Power Centers
 5 PUs for Axis control of 3 of 4 (Gibraltar, Egypt, Southern France, Greece)
 <br><br>
 Middle East Oil
-2 PUs for each or any of the following territories controlled by an Italian land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)
+2 PUs for each or any of the following territories controlled by Italy or has an Italian land unit. (Persia, Northwestern Persia, Iraq, Saudi-Arabia)
 <br><br>
 War of National Defense
 12 PUs (One Time Only) of units to be placed in Northern Italy or Southern Italy at the end of a combat movement phase if you are attacked by the Western Allies while you are still neutral. (Before Paris has fallen). The engine will give you 4 infantry placed in Southern Italy. Use edit mode if you want something other than 4 infantry by deleting the infantry and replacing them with what you really want.
@@ -8411,7 +8469,10 @@ All Players begin at War with the "True Neutrals". See above. You will need to <
   This Mod is discussed in detail here:<br>
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
-<br>Change Log:
+  <br>Change Log:
+  <br>
+<br>1.84
+<br>Change Mid East Oil Objectives for Germany and Italy to allow control or unit presence.
 <br>
 <br>1.83
 <br>Change Burma to UK Pacific Ownership.
