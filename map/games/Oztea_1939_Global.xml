@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.85"/>
+  <info name="Oztea 1939 Global" version="1.86"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -8280,7 +8280,6 @@ Japan is at war with China.<br>
 <br>
 <b>Note</b><br>
 When activating Pro Neutrals, Players may only move <b>into not through</b> these Territories. <b>AAguns</b> may not activate Pro Neutrals. This is <b>Player Enforced</b><br>
-Battleships will not repair when your capital has been lost. Use Edit.<br>
 <br>
 <b>Special Rules</b><br>
 <br>USSR begins at war with "Pro-Axis" Neutrals. It may also activate "Pro-Allied" Neutrals.<br>
@@ -8339,7 +8338,7 @@ Subjugated People
 5 PUs if each originally Chinese territory you control contains at least one Japanese land unit. AAguns count as a land unit.
 <br><br>
 <b>Note</b><br>
-You will be notified at the end of Japan's turn if any of your Chinese controlled territories are not garrisioned. You will need to <b>EDIT</b> the correct PUs if necessary.<br> You may turn these Notifications off in "Map Options". You may also start a game with them and save the game. When you start the saved game you can then turn them off in "Map Options".<br><br> 
+You will be notified at the end of Japan's turn if any of your Chinese controlled territories are not garrisioned. You will need to <b>EDIT</b> the correct PUs if necessary.<br> You may turn these Notifications off in "Map Options". You may also start a game with them on and save the game. When you start the saved game you can then turn them off in "Map Options".<br><br> 
 Trade with the Western Powers
 5 PUs if you are at peace with the Western Allies
 <br><br>
@@ -8497,7 +8496,7 @@ Chile: -1 infantry adds 1 artillery<br>
 
 <br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
 Check the box in "Map Options". You will also need to declare war on the Neutrals on Germany's first turn. <br><br> 
-All Players begin at War with the "True Neutrals". See above. You will need to <b>Player Enforce</b> the correct behavior. Activated via "Map Options".<br><br> <br>
+All Players begin at War with the "True Neutrals". See above. You will need to <b>Player Enforce</b> the correct behavior. Activated via "Map Options".<br><br> 
 <b>Optional</b><br>
 Escorts and Interceptors A2D2<br>
 Escorts and Interceptors now attack and defend on 2.<br><br><br>
@@ -8506,8 +8505,8 @@ Escorts and Interceptors now attack and defend on 2.<br><br><br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
   <br>
-<br>1.85
-<br>Fix Brazil Infantry not changing to American correctly. Add option to turn off notifications for "Subjugation" objective. Add AAguns able to garrison China. Add note for Battleships not repairing when your capital has been lost.<br>
+<br>1.86
+<br>Fix Brazil Infantry not changing to American correctly. Add option to turn off notifications for "Subjugation" objective. Add AAguns able to garrison China. Add otption "Escorts and Interceptors A2D2".<br>
 <br>1.84
 <br>Change Mid East Oil Objectives for Germany and Italy to allow control or unit presence.
 <br>
