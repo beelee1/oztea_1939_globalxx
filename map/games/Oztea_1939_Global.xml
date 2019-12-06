@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.84"/>
+  <info name="Oztea 1939 Global" version="1.85"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -4097,6 +4097,12 @@
       <option name="gameProperty" value="Charles de Gaulle Neutrals"/>
       <option name="invert" value="true"/>
     </attachment>
+    <attachment name="SubjugationNotifications" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Subjugation Notifications"/>
+    </attachment>
+    <attachment name="FtrsA2D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="gameProperty" value="Escorts and Interceptors A2D2"/>
+    </attachment>
     <attachment name="conditionAttachmentCDGMOD" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="CDGneutrals:CDGneutralsModified"/>
       <option name="conditionType" value="OR"/>
@@ -4782,270 +4788,270 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Yunnan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Yunnan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Yunnan_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Yunnan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Yunnan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_YunnanInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Yunnan:conditionAttachment_Japanese_Own_Yunnan_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Szechwan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Szechwan" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Szechwan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Szechwan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Szechwan_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Szechwan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Szechwan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
     <option name="conditions" value="conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_SzechwanInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-    <option name="conditions" value="conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_EmptyInvert"/>
+    <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Szechwan:conditionAttachment_Japanese_Own_Szechwan_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Sikang" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Sikang" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Sikang_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Sikang" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Sikang_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Sikang" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Sikang" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_SikangInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Sikang:conditionAttachment_Japanese_Own_Sikang_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hunan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Hunan" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hunan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hunan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hunan_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hunan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Hunan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_HunanInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Hunan:conditionAttachment_Japanese_Own_Hunan_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kweichow" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Kweichow" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kweichow_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kweichow" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kweichow_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kweichow" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Kweichow" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_KweichowInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Kweichow:conditionAttachment_Japanese_Own_Kweichow_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Tsinghai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Tsinghai" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Tsinghai_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Tsinghai" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Tsinghai_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Tsinghai" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Tsinghai" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_TsinghaiInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Tsinghai:conditionAttachment_Japanese_Own_Tsinghai_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shensi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Shensi" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shensi_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Shensi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shensi_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Shensi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Shensi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_ShensiInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Shensi:conditionAttachment_Japanese_Own_Shensi_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hopei" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Hopei" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hopei_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hopei" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Hopei_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Hopei" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Hopei" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_HopeiInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Hopei:conditionAttachment_Japanese_Own_Hopei_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kansu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Kansu" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kansu_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kansu" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kansu_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kansu" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Kansu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_KansuInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Kansu:conditionAttachment_Japanese_Own_Kansu_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Suiyuyan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Suiyuyan" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Suiyuyan_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Suiyuyan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Suiyuyan_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Suiyuyan" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Suiyuyan" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_SuiyuyanInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Suiyuyan:conditionAttachment_Japanese_Own_Suiyuyan_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Chahar" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Chahar" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Chahar_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Chahar" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Chahar_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Chahar" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Chahar" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_ChaharInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Chahar:conditionAttachment_Japanese_Own_Chahar_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Anhwe" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Anhwe" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Anhwe_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Anhwe" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Anhwe_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Anhwe" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Anhwe" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_AnhweInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Anhwe:conditionAttachment_Japanese_Own_Anhwe_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Manchuria" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Manchuria" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Manchuria_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Manchuria" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Manchuria_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Manchuria" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Manchuria" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Manchuria:conditionAttachment_Japanese_Own_Manchuria_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_ManchuriaInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Manchuria:conditionAttachment_Japanese_Own_Manchuria_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Manchuria:conditionAttachment_Japanese_Own_Manchuria_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Jehol" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Jehol" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Jehol_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Jehol" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Jehol_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Jehol" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Jehol" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Jehol:conditionAttachment_Japanese_Own_Jehol_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_JeholInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Jehol:conditionAttachment_Japanese_Own_Jehol_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Jehol:conditionAttachment_Japanese_Own_Jehol_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kiangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Kiangsi" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kiangsi_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kiangsi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kiangsi_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kiangsi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Kiangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Kiangsi:conditionAttachment_Japanese_Own_Kiangsi_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_KiangsiInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kiangsi:conditionAttachment_Japanese_Own_Kiangsi_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Kiangsi:conditionAttachment_Japanese_Own_Kiangsi_EmptyInvert"/>
     </attachment>
     
     <attachment name="conditionAttachment_Japanese_Own_Kiangsu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5053,18 +5059,18 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kiangsu_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kiangsu" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kiangsu_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kiangsu" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Kiangsu" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Kiangsu:conditionAttachment_Japanese_Own_Kiangsu_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_KiangsuInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kiangsu:conditionAttachment_Japanese_Own_Kiangsu_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Kiangsu:conditionAttachment_Japanese_Own_Kiangsu_EmptyInvert"/>
     </attachment>
     
     <attachment name="conditionAttachment_Japanese_Own_Kwangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5072,36 +5078,36 @@
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kwangsi_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kwangsi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Kwangsi_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Kwangsi" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Kwangsi" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Kwangsi:conditionAttachment_Japanese_Own_Kwangsi_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_KwangsiInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Kwangsi:conditionAttachment_Japanese_Own_Kwangsi_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Kwangsi:conditionAttachment_Japanese_Own_Kwangsi_EmptyInvert"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shantung" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedOwnershipTerritories" value="Shantung" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shantung_Empty" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Shantung" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Own_Shantung_EmptyInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="alliedPresenceTerritories" value="Shantung" count="1"/>
-      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
+      <option name="unitPresence" value="infantry:artillery:mech_infantry:armour:aaGun:American_infantry:American_artillery:American_mech_infantry:American_armour" count="1"/>
       <option name="invert" value="true"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_Shantung" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Own_Shantung:conditionAttachment_Japanese_Own_Shantung_Empty"/>
     </attachment>
     <attachment name="conditionAttachment_Japanese_Subjugate_ShantungInvert" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Own_Shantung:conditionAttachment_Japanese_Own_Shantung_EmptyInvert"/>
+      <option name="conditions" value="SubjugationNotifications:conditionAttachment_Japanese_Own_Shantung:conditionAttachment_Japanese_Own_Shantung_EmptyInvert"/>
     </attachment>
     <!-- Americans Conditions -->
     <attachment name="conditionAttachment_Americans_5_unit_presence" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5124,6 +5130,9 @@
       <option name="directPresenceTerritories" value="Western United States" count="1"/>
       <option name="unitPresence" value="factory_upgrade:factory_major" count="1"/>
       <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Own_Brazil" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Brazil" count="1"/>
     </attachment>
     <!-- French Conditions -->
     <attachment name="conditionAttachment_French_1_Lose_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5609,6 +5618,14 @@
       <option name="placement" value="Holland Belgium:infantry" count="1"/>
       <option name="when" value="after:germansNonCombatMove"/>
     </attachment>
+    <attachment name="triggerAttachment_FtrsA2D2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="trigger" value="FtrsA2D2"/>
+      <option name="unitType" value="fighter"/>
+      <option name="unitProperty" value="airDefense" count="2"/>
+      <option name="unitProperty" value="airAttack" count="2"/>
+      <option name="when" value="before:germansPolitics"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- Russians Triggers -->
     <attachment name="triggerAttachment_Russians_1_Lend_Lease" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="trigger" value="conditionAttachment_Russians_1_Lend_Lease"/>
@@ -6012,6 +6029,13 @@
       <option name="productionRule" value="productionAmericans:-buyBattleship"/>
       <option name="productionRule" value="productionAmericans:buyBattleshipX"/>
       <option name="when" value="before:americansPurchase"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Americans_Own_Brazil" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Americans_Own_Brazil"/>
+      <option name="removeUnits" value="Brazil:infantry" count="3"/>
+      <option name="placement" value="Brazil:American_infantry" count="3"/>
+      <option name="when" value="before:americansPlace"/>
       <option name="uses" value="1"/>
     </attachment>
     <!-- French Triggers -->
@@ -8230,6 +8254,12 @@
     <property name="Charles de Gaulle Neutrals Modified" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Subjugation Notifications" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Escorts and Interceptors A2D2" value="false" editable="true">
+      <boolean/>
+      </property>
     <property name="mapName" value="oztea_1939_global" editable="false"/>
     <property name="notes">
       <value><![CDATA[  
@@ -8250,6 +8280,7 @@ Japan is at war with China.<br>
 <br>
 <b>Note</b><br>
 When activating Pro Neutrals, Players may only move <b>into not through</b> these Territories. <b>AAguns</b> may not activate Pro Neutrals. This is <b>Player Enforced</b><br>
+Battleships will not repair when your capital has been lost. Use Edit.<br>
 <br>
 <b>Special Rules</b><br>
 <br>USSR begins at war with "Pro-Axis" Neutrals. It may also activate "Pro-Allied" Neutrals.<br>
@@ -8305,10 +8336,10 @@ Spread of Communism
 <br><br><br>
 <b>JAPAN</b><br>
 Subjugated People
-5 PUs if each originally Chinese territory you control contains at least one Japanese land unit.
+5 PUs if each originally Chinese territory you control contains at least one Japanese land unit. AAguns count as a land unit.
 <br><br>
 <b>Note</b><br>
-You will be notified at the end of Japan's turn if any of your Chinese controlled territories are not garrisioned. You will need to <b>EDIT</b> the correct PUs if necessary. <br><br> 
+You will be notified at the end of Japan's turn if any of your Chinese controlled territories are not garrisioned. You will need to <b>EDIT</b> the correct PUs if necessary.<br> You may turn these Notifications off in "Map Options". You may also start a game with them and save the game. When you start the saved game you can then turn them off in "Map Options".<br><br> 
 Trade with the Western Powers
 5 PUs if you are at peace with the Western Allies
 <br><br>
@@ -8416,7 +8447,8 @@ Eastern Persia (no longer Pro-Allied)<br>
 <br>
 <br>
 <b>Optional</b><br>
-Dutch Assist. Begining round 2, adds 1 Infantry to Holland Belgium after German Non Combat Move every turn until Holland is attacked and conquered. Activates via "Map Options". <br><br>
+Dutch Assist.<br>
+Begining round 2, adds 1 Infantry to Holland Belgium after German Non Combat Move every turn until Holland is attacked and conquered. Activates via "Map Options". <br><br>
 <b>Optional</b><br>
 Adds "Charles de Gaulle Neutrals".<br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
 Check the box in "Map Options". You will also need to <b>declare war on the Neutrals on Germany's first turn</b>. Select <b>NO:Axis_War_Neutral_True_CDG.BUTTON</b> This will put <b>All</b> Players at war with the True Neutrals.You will need to <b>Player Enforce</b> correct "Neutral" behavior. <br><br> 
@@ -8466,17 +8498,21 @@ Chile: -1 infantry adds 1 artillery<br>
 <br>Discussed in detail here:<b>https://www.axisandallies.org/forums/topic/28180/should-we-make-better-rules-for-invadable-neutrals-1940/4?page=1</b><br><br>
 Check the box in "Map Options". You will also need to declare war on the Neutrals on Germany's first turn. <br><br> 
 All Players begin at War with the "True Neutrals". See above. You will need to <b>Player Enforce</b> the correct behavior. Activated via "Map Options".<br><br> <br>
+<b>Optional</b><br>
+Escorts and Interceptors A2D2<br>
+Escorts and Interceptors now attack and defend on 2.<br><br><br>
   This Mod is discussed in detail here:<br>
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
   <br>
+<br>1.85
+<br>Fix Brazil Infantry not changing to American correctly. Add option to turn off notifications for "Subjugation" objective. Add AAguns able to garrison China. Add note for Battleships not repairing when your capital has been lost.<br>
 <br>1.84
 <br>Change Mid East Oil Objectives for Germany and Italy to allow control or unit presence.
 <br>
 <br>1.83
 <br>Change Burma to UK Pacific Ownership.
-<br>
 <br>
 <br>1.82
 <br>Clarify De Gaulle Neutrals DOW.
