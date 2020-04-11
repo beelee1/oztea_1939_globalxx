@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.88"/>
+  <info name="Oztea 1939 Global" version="1.89"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5330,6 +5330,12 @@
     </attachment>
     <attachment name="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="Italians:Dutch:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Not_Yet_At_War_With_Dutch" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Japanese:Dutch:anyNeutral"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_At_War_With_Dutch" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="relationship" value="Japanese:Dutch:anyWar"/>
     </attachment>
     <attachment name="conditionAttachment_British_Not_Yet_At_War_With_TrueNeutrals" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="relationship" value="British:Neutral_True:anyNeutral"/>
@@ -17283,6 +17289,7 @@
       <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
       <option name="text" value="Germans_War_Dutch"/>
     </attachment>
+    
     <attachment name="politicalActionAttachment_Italians_To_War_With_Dutch" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_Not_Yet_At_War_With_Dutch"/>
       <option name="relationshipChange" value="Italians:Dutch:War"/>
@@ -17291,6 +17298,16 @@
       <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
       <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
       <option name="text" value="Italians_War_Dutch"/>
+    </attachment>
+
+    <attachment name="politicalActionAttachment_Japanese_To_War_With_Dutch" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Not_Yet_At_War_With_Dutch"/>
+      <option name="relationshipChange" value="Japanese:Dutch:War"/>
+      <option name="relationshipChange" value="British:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Dutch:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Dutch:Friendly_Neutral"/>
+      <option name="text" value="Japanese_War_Dutch"/>
     </attachment>
     
     <!-- TODO: I suppose all the allies could go to war with Mongolians, but seriously.... they never would, so I'm not going to crowd out everyone's politics screen with it. -->
@@ -17621,6 +17638,19 @@
     </attachment>
     <attachment name="politicalActionAttachment_Americans_To_War_With_Japanese" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japanese_Not_Yet_At_War_With_Americans:conditionAttachment_Americans_May_Declare_War_On_Axis"/>
+      <option name="relationshipChange" value="Japanese:Americans:War"/>
+      <option name="relationshipChange" value="Chinese:Americans:Allied"/>
+      <option name="relationshipChange" value="British:Americans:Allied"/>
+      <option name="relationshipChange" value="UK_Pacific:Americans:Allied"/>
+      <option name="relationshipChange" value="ANZAC:Americans:Allied"/>
+      <option name="relationshipChange" value="Americans:French:Allied"/>
+      <option name="relationshipChange" value="Americans:Dutch:Friendly"/>
+      <option name="relationshipChange" value="Americans:Neutral_Allies:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Neutral_Axis:Unfriendly_Neutral"/>
+      <option name="text" value="Americans_War_Japanese"/>
+    </attachment>
+    <attachment name="politicalActionAttachment_Americans_To_War_With_JapaneseDutchAttack" attachTo="Americans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Not_Yet_At_War_With_Americans:conditionAttachment_Japanese_At_War_With_Dutch"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="relationshipChange" value="Chinese:Americans:Allied"/>
       <option name="relationshipChange" value="British:Americans:Allied"/>
@@ -19139,6 +19169,8 @@ If Southern France is taken control of by the Free French, the Fleet and all Vic
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
   <br>
+<br>1.89
+<br>Adds Japan can Declare War on the Dutch independent of other players.<br>
 <br>1.88
 <br>Fix Axis rolling for Southern France more than once. Fix Allies liberation of France not immediately liberating all Vichy Territories and Units. Fix incorrect Vichy Ship prompts and placement.<br>
 <br>1.87
