@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.90"/>
+  <info name="Oztea 1939 Global" version="1.91"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -17533,7 +17533,6 @@
       <option name="relationshipChange" value="British:Italians:War"/>
       <option name="relationshipChange" value="UK_Pacific:Italians:War"/>
       <option name="relationshipChange" value="ANZAC:Italians:War"/>
-      <option name="relationshipChange" value="Dutch:Italians:War"/>
       <option name="relationshipChange" value="Italians:Neutral_Axis:Friendly_Neutral"/>
       <option name="relationshipChange" value="Italians:Neutral_Allies:Unfriendly_Neutral"/>
       <option name="relationshipChange" value="Germans:Italians:Allied"/>
@@ -17542,7 +17541,6 @@
     <attachment name="politicalActionAttachment_Italians_To_War_With_French" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Italians_Not_At_War_With_French"/>
       <option name="relationshipChange" value="French:Italians:War"/>
-      <option name="relationshipChange" value="Dutch:Italians:War"/>
       <option name="relationshipChange" value="Italians:Neutral_Axis:Friendly_Neutral"/>
       <option name="relationshipChange" value="Italians:Neutral_Allies:Unfriendly_Neutral"/>
       <option name="relationshipChange" value="Germans:Italians:Allied"/>
@@ -19169,6 +19167,8 @@ If Southern France is taken control of by the Free French, the Fleet and all Vic
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
   <br>
+<br>1.91
+<br>Fix Italy auto DOW on Dutch when DOW on UK or France.<br>
 <br>1.90
 <br>Fix incorrect wording on Russian Lend Lease objective sea zone 103 corrected to sea zone 3.<br>
 <br>1.89
