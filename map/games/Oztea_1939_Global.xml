@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.93"/>
+  <info name="Oztea 1939 Global" version="1.94"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -19582,7 +19582,9 @@ The second time a Capital is capurted it's PUs are destroyed instead of captured
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
-  <br>
+<br>
+<br>1.94
+<br>Fix some Declaration of War notifications. Clarify Italy DOW on Britain and France.<br>
 <br>1.93
 <br>Make Germany and Russia able to Declare War on "True Neutrals" individually when "Charles de Gaulle Neutrals Modified" or "Vichy Option" is activated.<br>
 <br>1.92
