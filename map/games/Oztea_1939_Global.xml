@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.95"/>
+  <info name="Oztea 1939 Global" version="1.96"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -5495,8 +5495,15 @@
     <attachment name="conditionAttachment_Russians_Conquer_Japanese_Territory_By_Mongolia" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Russians:Japanese:any:currentRound:Manchuria:Jehol:Chahar:Suiyuyan:Kansu:Korea"/>
     </attachment>
-    <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_MongoliaCDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Japanese:Russians:any:currentRound:Timguska:Yenisey:Yakut S.S.R.:Buryatia:Amur"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Conquer_Mongolians_Territory" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Japanese:Mongolians:any:currentRound:Olgiy:Dzavhan:Tsagaan Olom:Central Mongolia:Buyant-Uhaa:Ulaanbaatar"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japanese_Conquer_Russians_Territory_By_MongoliaCDG:conditionAttachment_Japanese_Conquer_Mongolians_Territory"/>
+      <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Germans_have_units_in_China" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="Shantung:Kwangsi:Kiangsi:Kiangsu:Jehol:Manchuria:Shensi:Yunnan:Suiyuyan:Kweichow:Hunan:Kansu:Hopei:Tsinghai:Szechwan:Chahar:Sikang:Anhwe:Kwangtung:Burma" count="1"/>
@@ -17178,7 +17185,23 @@
       <option name="changeOwnership" value="Ulaanbaatar:Mongolians:Russians:true"/>
     </attachment>
     <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
+      <option name="conditions" value="conditionAttachmentCDGMODInvert:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="uses" value="1"/>
+      <option name="relationshipChange" value="Russians:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Americans:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="British:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="UK_Pacific:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="ANZAC:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Chinese:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="French:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Dutch:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="relationshipChange" value="Neutral_Allies:Mongolians:anyNeutral:Friendly_Neutral"/>
+      <option name="activateTrigger" value="triggerAttachment_Allies_Friendly_With_Mongolians:1:true:true:false:false"/>
+      <option name="activateTrigger" value="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_2:1:true:true:false:false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia_1CDG" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentCDGMOD:conditionAttachment_Japanese_Conquer_Russians_Territory_By_Mongolia:conditionAttachment_Mongolia_May_Change_To_Russians_Control_Switch"/>
       <option name="when" value="after:japaneseBattle"/>
       <option name="uses" value="1"/>
       <option name="relationshipChange" value="Russians:Mongolians:anyNeutral:Friendly_Neutral"/>
@@ -19583,6 +19606,10 @@ The second time a Capital is capurted it's PUs are destroyed instead of captured
   <br>
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
+<br>
+<br>
+1.96
+<br>When "Charles de Gaulle Neutrals Modified" is activated, Mongolia will now turn Russian when attacked by Japan.
 <br>
 <br>
 1.95
