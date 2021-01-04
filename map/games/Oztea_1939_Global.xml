@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Oztea 1939 Global" version="1.94"/>
+  <info name="Oztea 1939 Global" version="1.95"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.8"/>
   <diceSides value="6"/>
@@ -19340,7 +19340,8 @@ Soviet naval units in the Pacific Theater must remain adjacent to original Sovie
 <br>
 The Japanese Kamikaze special rule is deactivated when using the 1939 setup. It can be turned on in Map Options. "Use Kamikaze Suicide Attacks".<br>
 <br>
-USA cannot go to war against the Axis until the <b>beginning of PU collect phase of USA 5</b>, unless of course an Axis power attacks it first.<br>
+USA cannot go to war against the Axis until the <b>beginning of PU collect phase of USA 5</b>, unless of course an Axis power attacks it first. The USA may also declare war on any Axis power if the United Kingdom loses it's capital. <br>
+If Japan declares war on the Dutch, the USA may also declare war on any Axis power.<br>
 <br>
 <b>Player Enforced</b> USA may not end movement in seazone adjacent to Japanese controlled territories when not at war with Japan (Sea Zones 6, 17, 19, 20, 22, 32, 33, 34, 36, and 37).<br>
 <br>
@@ -19583,8 +19584,14 @@ The second time a Capital is capurted it's PUs are destroyed instead of captured
   https://www.axisandallies.org/forums/topic/32236/oztea-s-1939-global-setup/12<br><br><hr><br>
   <br>Change Log:
 <br>
-<br>1.94
-<br>Fix some Declaration of War notifications. Clarify Italy DOW on Britain and France.<br>
+<br>
+1.95
+<br>Clarify USA Declaration of War. Add version notification. Add notification for Italian combat.
+<br>
+<br>
+1.94
+<br>Fix some Declaration of War notifications. Clarify Italy DOW on Britain and France.
+<br>
 <br>1.93
 <br>Make Germany and Russia able to Declare War on "True Neutrals" individually when "Charles de Gaulle Neutrals Modified" or "Vichy Option" is activated.<br>
 <br>1.92
